@@ -3,7 +3,9 @@ const app = express();
 
 app.use(express.json());
 
-let students = [];
+let students = [
+  {id: 1, name: "Alice", age: 20},
+];
 
 app.get("/students", (req, res) => {
   res.json(students);
