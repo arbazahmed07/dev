@@ -83,6 +83,32 @@ spec:
             name: app-config
 
 
+//service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+spec:
+  type: NodePort
+  selector:
+    app: flask-app
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 30000
+
+//commands
+
+
+kubectl apply -f deployment.yaml
+
+kubectl apply -f service.yaml
+
+kubectl get pods
+
+kubectl get services
+
 
 //github
 
